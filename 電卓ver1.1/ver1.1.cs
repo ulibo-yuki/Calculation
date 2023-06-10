@@ -30,7 +30,7 @@ namespace calculator
 
 
                 //算法の選択と設定
-                Console.WriteLine("2数の和はa,差はs,積はm,商はd,余りはrを入力してください。");
+                Console.WriteLine("2数の和はa,差はs,積はm,商はd,余りはr,累乗はeを入力してください。");
                 string art = Console.ReadLine();
 
                 decimal result = 0;
@@ -59,6 +59,10 @@ namespace calculator
                     case "r":
                         result = CalculateMod(input1, input2);
                         a = "余り";
+                        break;
+                    case "e":
+                        result = CalculateEx(input1, input2);
+                        a = "^";
                         break;
                     default:
                         Console.WriteLine("2数の和はa,差はs,積はm,商はd,余りはrを入力してください。");
@@ -129,6 +133,17 @@ namespace calculator
             //剰余
             decimal mod = num1 % num2;
             return mod;
+        }
+        public static decimal CalculateEx(decimal num1, decimal num2)
+        {
+            //累乗
+            int num2_int = Convert.ToInt32(num2);
+            decimal Ex = 1;
+            for (int i = 1; i > 0; i -= 1)
+            {
+                Ex = num1 * num1;
+            }
+            return Ex;
         }
     }
 }
