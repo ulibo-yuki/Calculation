@@ -65,7 +65,7 @@ namespace calculator
                         a = "^";
                         break;
                     default:
-                        Console.WriteLine("2数の和はa,差はs,積はm,商はd,余りはrを入力してください。");
+                        Console.WriteLine("2数の和はa,差はs,積はm,商はd,余りはr,累乗はeを入力してください。");
                         break;
                 }
                 //結果表示
@@ -97,7 +97,7 @@ namespace calculator
                         input1 = result;
                         Console.WriteLine(result + "に何を計算しますか。");
                         break;
-                        //クリア計算
+                        //計算をクリア
                 }
  
             }
@@ -137,11 +137,19 @@ namespace calculator
         public static decimal CalculateEx(decimal num1, decimal num2)
         {
             //累乗
-            int num2_int = Convert.ToInt32(num2);
-            decimal Ex = 1;
-            for (int i = 1; i > 0; i -= 1)
+            int i = Convert.ToInt32(num2);
+            i = i - 1;
+            decimal Ex = num1;
+            if ( i <= 0)
             {
-                Ex = num1 * num1;
+                Ex = 1;
+            }
+            else
+            {
+                for (int r = i ; r > 0; r --)
+                {
+                    Ex = Ex * num1;
+                }
             }
             return Ex;
         }
