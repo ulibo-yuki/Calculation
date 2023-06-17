@@ -2,8 +2,6 @@
 
 ## 日本語
 
-**フォルダ名にはver1.1とありますが、関係ないです。**
-
 ## 概要
 
 コンソールで動作する電卓です。
@@ -20,8 +18,6 @@
 また、演算結果を代入している型がdecimalなので28桁を超えるとエラー吐きます。(今後対応予定)
 
 ## English
-
-**The folder name includes "ver1.1," but it is not relevant.**
 
 ## Overview
 
